@@ -9,8 +9,9 @@ function CardMaker() {
       <Card
         key={roboList[i].id}
         name={roboList[i].name}
-        email={roboList[i].email}
-        img={`https://robohash.org/s${roboList[i].id}`}
+        username={`User aneme: ${roboList[i].username}`}
+        email={`Email: ${roboList[i].email}`}
+        img={`https://robohash.org/${roboList[i].id}?size=200x200`}
       />
     );
   });
