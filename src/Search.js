@@ -5,7 +5,7 @@ const Search = ({ setChange }) => {
   return (
     <div className="pa3">
       <input
-        className="pa3 w-200 bg-light-green bw2 black mt4"
+        className="pa3 w-200 bg-light-green black mt1"
         type="search"
         placeholder="Enter any letter "
         onChange={setChange}

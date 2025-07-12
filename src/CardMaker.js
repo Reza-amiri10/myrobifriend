@@ -7,7 +7,7 @@ function CardMaker({ roboList }) {
     return (
       <Card
         key={roboList[i].id}
-        name={roboList[i].name}
+        name={`Name: ${roboList[i].name}`}
         username={`User aneme: ${roboList[i].username}`}
         email={`Email: ${roboList[i].email}`}
         img={`https://robohash.org/${roboList[i].id}?size=200x200`}

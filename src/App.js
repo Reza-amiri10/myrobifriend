@@ -25,15 +25,16 @@ class App extends Component {
         .includes(this.state.searchvalue.toLowerCase());
     });
     return (
-      <div className="App pa0 ma0">
-        <header className="  ma0 pa3 fixed top-0 left-0 right-0 z-999">
+      <div className="App">
+        <header className=" ma0 pa2 fixed top-0 left-0 right-0 z-999">
           <div>
-            <h1 className="title pa0 ma0 dib">MY ROBO FRIENDS</h1>
+            <h1 className="title mb1 dib">MY ROBO FRIENDS</h1>
             <Search setChange={this.setSearChange} />
           </div>
         </header>
-        <main className="mt7 pa3">
+        <main className="main pa3">
           <div className="lh-copy">
+            <hr className="w-100 h-3 black"></hr>
             <CardMaker roboList={filterRobots} />
           </div>
         </main>
