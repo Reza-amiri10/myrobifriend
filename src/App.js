@@ -24,12 +24,18 @@ class App extends Component {
         .toLowerCase()
         .includes(this.state.searchvalue.toLowerCase());
     });
+    const counts = filterRobots.length;
     return (
       <div className="App">
         <header className=" ma0 pa2 fixed top-0 left-0 right-0 z-999">
           <div>
             <h1 className="title mb1 dib">MY ROBO FRIENDS</h1>
-            <Search setChange={this.setSearChange} />
+            <div className="flex items-center justify-center w-100">
+              <Search setChange={this.setSearChange} />
+              <h1 className="count">
+                {counts > 0 ? `${counts} Matches` : "No Matches"}
+              </h1>
+            </div>
           </div>
         </header>
         <main className="main pa3">

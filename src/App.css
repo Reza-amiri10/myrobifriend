@@ -13,9 +13,13 @@
 }
 input:focus {
   outline: none;
-  border: solid 4px rgb(54, 54, 247);
+  border: solid 4px rgb(4, 120, 156);
   background-color: white;
 }
 .main {
   margin-top: 180px;
+}
+
+.count {
+  color: rgba(6, 127, 87, 0.636);
 }
