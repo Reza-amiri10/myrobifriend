@@ -1,9 +1,8 @@
 import "tachyons";
 import "./App.css";
-import roboList from "./RoboList";
 import Card from "./Card";
 
-function CardMaker() {
+function CardMaker({ roboList }) {
   const cardcomponents = roboList.map((robo, i) => {
     return (
       <Card
