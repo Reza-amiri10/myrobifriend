@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Bezmiar";
+  src: url("../public/fonts/Bezmiar-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 .App {
   text-align: center;
   margin: 0;
@@ -10,6 +16,7 @@
   background: -webkit-linear-gradient(#eeeeee, #03aa38);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Bezmiar";
 }
 input:focus {
   outline: none;

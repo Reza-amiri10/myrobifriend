@@ -1201,7 +1201,7 @@ const roboList = [
   },
   {
     id: 201,
-    name: "John Wick",
+    name: "John Stone",
     username: "john_a_vick",
     email: "johnvick@gmail.com",
   },
