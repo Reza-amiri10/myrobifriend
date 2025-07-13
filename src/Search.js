@@ -1,7 +1,7 @@
 import React from "react";
 import "tachyons";
 
-const Search = ({ setChange }) => {
+const Search = ({ setChange, props }) => {
   return (
     <div className="pa3">
       <input

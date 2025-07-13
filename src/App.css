@@ -12,7 +12,6 @@
   background-color: #9bc09c;
 }
 .title {
-  font-size: 50px;
   background: -webkit-linear-gradient(#eeeeee, #03aa38);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,4 +28,10 @@ input:focus {
 
 .count {
   color: rgba(6, 127, 87, 0.636);
+}
+.lowding {
+  background: -webkit-linear-gradient(#eeeeee, #03aa38);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Bezmiar";
 }
