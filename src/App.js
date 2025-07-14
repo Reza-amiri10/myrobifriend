@@ -30,7 +30,7 @@ class App extends Component {
       <div className="App">
         <header className=" ma0 pa2 fixed top-0 left-0 right-0 z-999">
           <div>
-            <h1 className="title mb1 dib f3">MY ROBO FRIENDS</h1>
+            <h1 className="title mb1 dib f3">MY ROBO</h1>
             <div className="flex items-center justify-center w-100">
               <Search ref={this.inputRef} setChange={this.setSearChange} />
               <h1 className="count f3">
