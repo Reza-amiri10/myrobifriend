@@ -25,43 +25,29 @@ class App extends Component {
         .toLowerCase()
         .includes(this.state.searchvalue.toLowerCase());
     });
-    const searchCounts = filterRobots.length;
+    const Counts = filterRobots.length;
     return (
       <div className="App">
         <div>
-          <h1 className="title mb1 dib f3">MY ROBO</h1>
+          <h1 className="title beamiarFont mb1 dib">MY ROBO FRIEND</h1>
           <div className="flex items-center justify-center w-100">
             <Search ref={this.inputRef} setChange={this.setSearChange} />
             <h1 className="count f3">
-              {searchCounts > 0 ? `${searchCounts} Matches` : ""}
+              {Counts > 0 && this.state.searchvalue.toLocaleLowerCase()
+                ? `${Counts} Matches`
+                : ""}
             </h1>
           </div>
         </div>
-        {/* <header className=" ma0 pa2 fixed top-0 left-0 right-0 z-999">
-          <div>
-            <h1 className="title mb1 dib f3">MY ROBO</h1>
-            <div className="flex items-center justify-center w-100">
-              <Search ref={this.inputRef} setChange={this.setSearChange} />
-              <h1 className="count f3">
-                {searchCounts > 0 ? `${searchCounts} Matches` : ""}
-              </h1>
-            </div>
-          </div>
-        </header> */}
+
         <Scroll>
-          <CardMaker roboList={filterRobots} />
-          {/* {allCardsLowd > 0 ? (
-          <main className="main pa3">
-            <div className="lh-copy">
-              <hr className="w-100 h-3 black"></hr>
-              <CardMaker roboList={filterRobots} />
-            </div>
-          </main>
-        ) : (
-          <main className="main pa3">
-            <h1 className="lowding">NO MATCHES</h1>
-          </main>
-        )} */}
+          {Counts > 0 ? (
+            <CardMaker roboList={filterRobots} />
+          ) : this.state.searchvalue.toLocaleLowerCase() ? (
+            <h1 className="beamiarFont lowding">NO MATCHES</h1>
+          ) : (
+            <h1 className="beamiarFont lowding">LOWDING...</h1>
+          )}
         </Scroll>
       </div>
     );
