@@ -1,11 +1,11 @@
 import React from "react";
 import "tachyons";
 
-const Search = ({ setChange, props }) => {
+const Search = ({ setChange }) => {
   return (
     <div className="pa3">
       <input
-        className="pa3 w-200 bg-light-green black mt1"
+        className="pa2 w-200 bg-light-green black mt1"
         type="search"
         placeholder="Enter any letter "
         onChange={setChange}

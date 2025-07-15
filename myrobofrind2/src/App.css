@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "exwayer";
+  src: url("/fonts/exwayer.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lunar";
+  src: url("/fonts/Lunar Escape.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.App {
+  text-align: center;
+  margin: 0;
+}
+.card-box {
+  background-color: #9bc09c;
+}
+.beamiarFont {
+  font-size: 60px;
+  background: -webkit-linear-gradient(#eeeeee, #03aa38);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "exwayer";
+  text-shadow: 2px 2px 2px rgba(80, 80, 80, 0.666);
+}
+
+input:focus {
+  outline: none;
+  border: solid 2px rgb(4, 120, 156);
+  background-color: white;
+}
+.count {
+  font-family: "Lunar";
+  font-size: 20px;
+  color: #2c8a4a;
+  text-shadow: 2px 2px 2px rgba(80, 80, 80, 0.666);
+}
+.lowding {
+  margin-top: 100px;
+}
