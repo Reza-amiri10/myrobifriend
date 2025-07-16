@@ -1,60 +1,54 @@
-import React, { Component } from "react";
-import CardMaker from ".//components/CardMaker";
+import React, { useState, useEffect } from "react";
+import CardMaker from "./components/CardMaker";
+import Search from "./components/Search";
+import Scroll from "./components/Scroll";
 
 import "tachyons";
 import "./App.css";
 
-import roboList from ".//assets/RoboList";
-import Search from ".//components/Search";
-import Scroll from ".//components/Scroll";
+import roboList from "./assets/RoboList";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      robots: roboList,
-      searchvalue: "",
-    };
-  }
+export default function App() {
+  const [robots, setRobots] = useState([]);
+  const [serchField, setSearchField] = useState("");
 
-  setSearChange = (event) => {
-    this.setState({ searchvalue: event.target.value });
+  useEffect(() => {
+    setRobots(roboList);
+  }, []);
+
+  const onSearchChange = (event) => {
+    setSearchField(event.target.value);
   };
 
-  render() {
-    const { robots, searchvalue } = this.state;
-    const searchField = searchvalue.toLowerCase();
-
-    const filterRobots = robots.filter((robot) =>
-      robot.name.toLowerCase().includes(searchField)
-    );
-    const cardCounts = filterRobots.length;
-    return (
-      <div className="App">
-        <header className="tc pv0">
-          <div>
-            <h1 className="title beamiarFont mb1 dib">MY ROBO FRIEND</h1>
-            <div className="flex items-center justify-center w-100">
-              <Search ref={this.inputRef} setChange={this.setSearChange} />
-              <h1 className="count f3">
-                {cardCounts > 0 && searchField ? `${cardCounts} Matches` : ""}
-              </h1>
-            </div>
+  const filtereRobots = robots.filter((robot) =>
+    robot.name.toLowerCase().includes(serchField.toLowerCase())
+  );
+  console.log(filtereRobots);
+  return (
+    <div className="App">
+      <header className="tc pv0">
+        <div>
+          <h1 className="title beamiarFont mb1 dib">MY ROBO FRIEND</h1>
+          <div className="flex items-center justify-center w-100">
+            <Search setChange={onSearchChange} />
+            <h1 className="count f3">
+              {robots.length > 0 && serchField
+                ? `${filtereRobots.length} Matches`
+                : ""}
+            </h1>
           </div>
-        </header>
+        </div>
+      </header>
 
-        <Scroll>
-          {cardCounts > 0 ? (
-            <CardMaker roboList={filterRobots} />
-          ) : searchField ? (
-            <h1 className="beamiarFont lowding">NO MATCHES</h1>
-          ) : (
-            <h1 className="beamiarFont lowding">LOWDING...</h1>
-          )}
-        </Scroll>
-      </div>
-    );
-  }
+      <Scroll>
+        {robots.length > 0 ? (
+          <CardMaker roboList={filtereRobots} />
+        ) : robots ? (
+          <h1 className="beamiarFont lowding">NO MATCHES</h1>
+        ) : (
+          <h1 className="beamiarFont lowding">LOWDING...</h1>
+        )}
+      </Scroll>
+    </div>
+  );
 }
-
-export default App;
