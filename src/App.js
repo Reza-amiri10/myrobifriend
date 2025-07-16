@@ -43,7 +43,7 @@ export default function App() {
       <Scroll>
         {robots.length > 0 ? (
           <CardMaker roboList={filtereRobots} />
-        ) : robots ? (
+        ) : filtereRobots.length === 0 && serchField ? (
           <h1 className="beamiarFont lowding">NO MATCHES</h1>
         ) : (
           <h1 className="beamiarFont lowding">LOWDING...</h1>
