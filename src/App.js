@@ -23,16 +23,17 @@ export default function App() {
   const filtereRobots = robots.filter((robot) =>
     robot.name.toLowerCase().includes(serchField.toLowerCase())
   );
+  const filtereCount = 0;
   console.log(filtereRobots);
   return (
     <div className="App">
       <header className="tc pv0">
         <div>
-          <h1 className="title beamiarFont mb1 dib">MY ROBO FRIEND</h1>
+          <h1 className="title beamiarFont mb1 dib">ROBO FRIEND</h1>
           <div className="flex items-center justify-center w-100">
             <Search setChange={onSearchChange} />
             <h1 className="count f3">
-              {robots.length > 0 && serchField
+              {filtereCount > 0 && serchField
                 ? `${filtereRobots.length} Matches`
                 : ""}
             </h1>
@@ -41,9 +42,9 @@ export default function App() {
       </header>
 
       <Scroll>
-        {robots.length > 0 ? (
+        {filtereCount > 0 ? (
           <CardMaker roboList={filtereRobots} />
-        ) : filtereRobots.length === 0 && serchField ? (
+        ) : filtereCount === 0 && serchField ? (
           <h1 className="beamiarFont lowding">NO MATCHES</h1>
         ) : (
           <h1 className="beamiarFont lowding">LOWDING...</h1>
