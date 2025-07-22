@@ -23,8 +23,8 @@ export default function App() {
   const filtereRobots = robots.filter((robot) =>
     robot.name.toLowerCase().includes(serchField.toLowerCase())
   );
-  const filtereCount = 0;
-  console.log(filtereRobots);
+  const filtereCount = filtereRobots.length;
+
   return (
     <div className="App">
       <header className="tc pv0">
